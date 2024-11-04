@@ -1,0 +1,29 @@
+:root {
+  --color-bg-light: #ffffff; /* Light mode background color */
+  --color-bg-dark: #1f2937; /* Dark mode background color (gray-900) */
+  --color-text-light: #1f2937; /* Light mode text color */
+  --color-text-dark: #e5e7eb; /* Dark mode text color (gray-300) */
+  --color-accent-light: #3b82f6; /* Example accent color for light mode */
+  --color-accent-dark: #60a5fa; /* Example accent color for dark mode */
+}
+
+/* Base styles */
+body {
+  background-color: var(--color-bg-light);
+  color: var(--color-text-light);
+  transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition */
+}
+
+a {
+  color: var(--color-accent-light);
+}
+
+/* Dark mode styles */
+body.dark {
+  background-color: var(--color-bg-dark);
+  color: var(--color-text-dark);
+}
+
+body.dark a {
+  color: var(--color-accent-dark);
+}

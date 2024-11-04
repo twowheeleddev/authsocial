@@ -1,0 +1,25 @@
+20241104	01:37:17	3bf6b70a-ab4f-41a0-a2bd-0fd859e40a35	Cannot find module './routes/root'
+Require stack:
+- C:\Users\twowh\OneDrive\Desktop\authsocial\Server\server.js
+20241104	01:38:33	6c20f02b-c9b9-4308-869a-cdb56e4458e5	Cannot find module '../middleware/authMiddleware'
+Require stack:
+- C:\Users\twowh\OneDrive\Desktop\authsocial\Server\routes\authRoutes.js
+- C:\Users\twowh\OneDrive\Desktop\authsocial\Server\server.js
+20241104	01:42:38	f604fc97-a07e-407b-8513-3bc779232d62	Route.post() requires a callback function but got a [object Undefined]
+20241104	01:44:20	7750ec90-4eb8-4020-aedb-61c469c9c8a2	Route.post() requires a callback function but got a [object Undefined]
+20241104	01:48:10	102f20b7-aded-4c92-897c-c4f05e5fbcac	Route.post() requires a callback function but got a [object Undefined]
+20241104	01:49:44	ac7e9a4a-08ab-439a-8940-f1977be12f86	Error: Route.post() requires a callback function but got a [object Undefined]
+20241104	01:51:53	89bcd691-7250-4cbf-b320-a533ace3b2a9	Error: Route.get() requires a callback function but got a [object Undefined]
+20241104	01:58:14	552f3d1c-26ae-4e29-b684-763578e48682	Error: Route.get() requires a callback function but got a [object Undefined]
+20241104	02:00:28	a3397947-7d78-4630-b6b1-88637c512648	Error: Route.get() requires a callback function but got a [object Undefined]
+20241104	02:01:09	3b269b68-8426-4c9c-8527-950b1c2be0c5	Error: Cannot find module './routes/userRoutes'
+Require stack:
+- C:\Users\twowh\OneDrive\Desktop\authsocial\Server\server.js
+20241104	02:01:37	c0ca0e37-6c8b-4edc-ab6c-209e37f6db54	Error: Route.get() requires a callback function but got a [object Undefined]
+20241104	02:04:00	20d2623d-2c03-43db-9813-8411b49aa1ca	Error: Route.get() requires a callback function but got a [object Undefined]
+20241104	02:06:41	50bc1129-6551-4e42-8144-7adbcfda33c6	Error: Route.get() requires a callback function but got a [object Undefined]
+20241104	02:13:00	138214c9-9d2e-4b4e-8eef-729a611a64d2	Error: Route.get() requires a callback function but got a [object Undefined]
+20241104	02:18:37	40c5f5bb-b675-4dda-91a5-58b54dcc49b9	Error: Route.get() requires a callback function but got a [object Undefined]
+20241104	02:29:57	89a03e98-d00c-4a17-9c46-9c2d88ee7680	Error: Cannot find module './routes/sheltersRoutes'
+Require stack:
+- C:\Users\twowh\OneDrive\Desktop\authsocial\Server\server.js

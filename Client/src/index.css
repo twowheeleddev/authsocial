@@ -1,0 +1,43 @@
+/** src/index.css **/
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/** CSS RESET **/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/** CUSTOM STYLES **/
+
+/** KEYFRAMES **/
+@keyframes scroll {
+  from {
+    transform: translateX(0); /* Start just outside the right edge */
+  }
+  to {
+    transform: translateX(-50%); /* Move all the way to the left */
+  }
+}
+
+.scroll-container {
+  @apply flex overflow-hidden w-full;
+}
+
+.scroll-content {
+  @apply flex;
+  animation: scroll 120s linear infinite forwards;
+}
+
+.scroll-content > * {
+  @apply flex-none mr-4;
+}
+
+/* Faster scrolling for mobile */
+@media (max-width: 480px) {
+  .scroll-content {
+    animation: scroll 320s linear infinite forwards; /* Faster duration for mobile */
+  }
+}
