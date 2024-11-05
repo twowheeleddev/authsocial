@@ -3,14 +3,15 @@ require("express-async-errors");
 const express = require("express");
 const app = express();
 const path = require("path");
-const { logger, logEvents } = require("./middleware/logger");
+const {logger, logEvents} = require("./middleware/logger");
 const errorHandler = require("./middleware/errorHandler");
 const cookieParser = require("cookie-parser");
 const cors = require("cors");
+const usersController = require("./controllers/usersController");
 const corsOptions = require("./config/corsOptions");
 const connectDB = require("./config/dbConn"); // MySQL connection
 const createTables = require("./createTables"); // Ensuring tables are created
-const PORT = process.env.PORT || 3500;
+const PORT = process.env.PORT || 8080;
 
 console.log(`Environment: ${process.env.NODE_ENV}`);
 
@@ -35,6 +36,7 @@ console.log(`Environment: ${process.env.NODE_ENV}`);
 
     // Route setup
     app.use("/", require("./routes/root"));
+    app.use("/register", usersController.createNewUser);
     app.use("/auth", require("./routes/authRoutes"));
     app.use("/users", require("./routes/userRoutes"));
     app.use("/shelters", require("./routes/sheltersRoutes")); // Example for shelters routes
@@ -45,7 +47,7 @@ console.log(`Environment: ${process.env.NODE_ENV}`);
       if (req.accepts("html")) {
         res.sendFile(path.join(__dirname, "views", "404.html"));
       } else if (req.accepts("json")) {
-        res.json({ message: "404 Not Found" });
+        res.json({message: "404 Not Found"});
       } else {
         res.type("txt").send("404 Not Found");
       }

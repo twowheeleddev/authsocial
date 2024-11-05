@@ -3,7 +3,7 @@ import { lazy, Suspense } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import LoadingFallback from '../components/LoadingFallback';
 
-const Home = lazy(() => import('../pages/homepage/HomePage'));
+const HomePage = lazy(() => import('../pages/homepage/Homepage'));
 const About = lazy(() => import('../pages/About'));
 const CommunitySupport = lazy(() => import('../pages/CommunitySupport'));
 const Contact = lazy(() => import('../pages/Contact'));
@@ -22,7 +22,7 @@ const UserProfile = lazy(() => import('../pages/UserProfile'));
 const AppRoutes = () => (
   <Suspense fallback={<LoadingFallback />}>
     <Routes>
-      <Route path="/" element={<Home />} />
+      <Route path="/" element={<HomePage />} />
       <Route path="/about" element={<About />} />
       <Route path="/community-support" element={<CommunitySupport />} />
       <Route path="/contact" element={<Contact />} />

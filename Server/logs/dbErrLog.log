@@ -23,3 +23,4 @@ Require stack:
 20241104	02:29:57	89a03e98-d00c-4a17-9c46-9c2d88ee7680	Error: Cannot find module './routes/sheltersRoutes'
 Require stack:
 - C:\Users\twowh\OneDrive\Desktop\authsocial\Server\server.js
+20241105	06:31:19	4a1e037d-86f0-4b8f-9b53-633a55e24007	Error: createTables is not a function
