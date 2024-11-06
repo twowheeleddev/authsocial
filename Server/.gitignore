@@ -1,0 +1,78 @@
+# Ignore environment variable files
+.env
+.env.local
+.env.*.local
+
+# Ignore node_modules folder (for both frontend and backend)
+node_modules/
+
+# Ignore log files
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Ignore build and cache directories
+dist/
+build/
+.cache/
+out/
+.next/
+
+# Ignore temporary files
+*.tmp
+*.temp
+
+# Ignore system files
+.DS_Store
+Thumbs.db
+
+# Ignore editor config files
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Ignore coverage reports
+coverage/
+*.lcov
+
+# Ignore package lock files if you use a specific package manager lockfile only
+# If using npm
+package-lock.json
+# If using Yarn
+yarn.lock
+# If using pnpm
+pnpm-lock.yaml
+
+# Ignore compiled TypeScript files (if applicable)
+*.tsbuildinfo
+
+# Ignore Firebase and Amplify config files (if applicable)
+# .firebase/
+# amplify/#current-cloud-backend
+# amplify/.config/local-env-info.json
+# amplify/backend/amplify-meta.json
+
+# Ignore test output files
+*.log
+*.spec.js.snap
+test-results/
+
+# Ignore secrets and sensitive config files (if applicable)
+# secret.config.js
+# firebase.json
+# firebase-debug.log
+
+# Ignore GitHub and CI/CD specific files
+.github/workflows/node_modules/
+.github/workflows/*.env
+
+# Ignore ESLint and Prettier output
+eslintcache
+.prettiercache
+
+# Ignore public folder assets (optional)
+public/uploads/
+public/assets/
+public/temp/
