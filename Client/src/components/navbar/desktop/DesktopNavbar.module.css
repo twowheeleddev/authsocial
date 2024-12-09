@@ -1,0 +1,92 @@
+:root {
+	--background-light: #fff5f5; /* Light mode background color */
+	--background-dark: #2b2d42; /* Dark mode background color */
+}
+
+/* Navbar Container */
+.navbar {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 1rem;
+	background-color: var(--background-light); /* Default light mode */
+	position: relative;
+	border: none;
+	transition: background-color 0.3s ease; /* Smooth transition */
+}
+
+/* Dark Mode */
+.navbar.dark {
+	background-color: var(--background-dark); /* Switch to dark mode */
+}
+
+/* Top and Bottom Christmas Border */
+.navbar::before,
+.navbar::after {
+	content: '🎄🎁🎅❄️🎄🎁🎅❄️🎄🎁🎅❄️🎄🎁🎅❄️🎄🎁🎅❄️🎄🎁🎅❄️🎄🎁🎅❄️🎄🎁🎅';
+	display: block;
+	position: absolute;
+	width: 100%;
+	font-size: 2.5rem; /* Adjust emoji size */
+	text-align: center;
+}
+
+.navbar::before {
+	top: 0;
+	transform: translateY(-100%);
+}
+
+.navbar::after {
+	bottom: 0;
+	transform: translateY(100%);
+}
+
+/* Title */
+.title {
+	font-size: 1.5rem;
+	font-weight: bold;
+	color: var(--color-light-text);
+}
+
+.title.dark {
+	color: var(--color-dark-text);
+}
+
+/* Centered Welcome Message */
+.welcomeMessage {
+	position: absolute;
+	left: 50%;
+	transform: translateX(-50%);
+	font-weight: bold;
+	color: var(--color-light-text);
+}
+
+.welcomeMessage.dark {
+	color: var(--color-dark-text);
+}
+
+/* Navigation Links */
+.navLinks {
+	display: flex;
+	justify-content: flex-end;
+	gap: 1.5rem;
+	margin-left: auto;
+}
+
+.navLink {
+	text-decoration: none;
+	color: var(--color-light-text);
+	transition: color 0.3s ease;
+}
+
+.navLink:hover {
+	color: var(--color-accent);
+}
+
+.navLink.dark {
+	color: var(--color-dark-text);
+}
+
+.navLink.dark:hover {
+	color: var(--color-dark-accent);
+}

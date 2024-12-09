@@ -1,28 +1,58 @@
-// src/components/desktop/DesktopNavbar.jsx
-import { Link } from 'react-router-dom';
-import { logo } from '../../../assets/index'; // Adjust the import path as needed
-import ThemeToggle from '../../ThemeToggle';
-import { useTheme } from '../../../providers/ThemeProvider';
+import { Link } from 'react-router-dom'
+import ThemeToggle from '../../ThemeToggle'
+import { useUser } from '../../../providers/MockProvider'
+import XmasBorder from '../../borders/XmasBorder'
 
 const DesktopNavbar = () => {
-  const { isDarkMode } = useTheme();
+	const user = useUser()
 
-  return (
-    <div className={`flex justify-between items-center p-4 bg-gray-100 dark:bg-gray-900`}>
-      <Link to="/">
-        <img src={logo} alt="Social Shelters Logo" className="h-10" /> {/* Logo in desktop */}
-      </Link>
-      <div className="flex space-x-4">
-        <Link to="/" className="hover:text-green-500 text-gray-700 dark:text-magenta dark:hover:text-neon-yellow">Home</Link>
-        <Link to="/shelters" className="hover:text-green-500 text-gray-700 dark:text-magenta dark:hover:text-neon-yello">Shelters</Link>
-        <Link to="/about" className="hover:text-green-500text-gray-700 dark:text-magenta dark:hover:text-neon-yellow">About</Link>
-        <Link to="/contact" className="hover:text-green-500 text-gray-700 dark:text-magenta dark:hover:text-neon-yellow">Contact</Link>
-        <Link to="/services" className="hover:text-green-500 text-gray-700 dark:text-magenta dark:hover:text-neon-yellow">Services</Link>
-        <Link to="/donate" className="hover:text-green-500 text-gray-700 dark:text-magenta dark:hover:text-neon-yellow">Donate</Link>
-      </div>
-      <ThemeToggle />
-    </div>
-  );
-};
+	return (
+		<nav
+			className="relative flex items-center justify-between p-4 bg-light dark:bg-gray-900 transition-colors duration-300"
+			aria-label="Desktop Navigation"
+		>
+			{/* Christmas Borders */}
+			<XmasBorder />
 
-export default DesktopNavbar;
+			{/* Social Shelters Title */}
+			<div className="text-xl font-bold text-dark-text dark:text-light-text">
+				<Link to="/">Social Shelters</Link>
+			</div>
+
+			{/* Centered Welcome Message */}
+			{user && (
+				<div
+					className="absolute left-1/2 transform -translate-x-1/2 font-bold text-dark-text dark:text-light-text"
+					aria-label="Welcome User"
+				>
+					Welcome, {user.name}!
+				</div>
+			)}
+
+			{/* Navigation Links */}
+			<div className="flex gap-6 ml-auto">
+				{[
+					{ to: '/', label: 'Home' },
+					{ to: '/shelters', label: 'Shelters' },
+					{ to: '/about', label: 'About' },
+					{ to: '/contact', label: 'Contact' },
+					{ to: '/services', label: 'Services' },
+					{ to: '/donate', label: 'Donate' },
+				].map((link) => (
+					<Link
+						key={link.to}
+						to={link.to}
+						className="text-dark-text dark:text-light-text hover:text-accent dark:hover:text-dark-accent transition-colors"
+					>
+						{link.label}
+					</Link>
+				))}
+			</div>
+
+			{/* Theme Toggle */}
+			<ThemeToggle />
+		</nav>
+	)
+}
+
+export default DesktopNavbar
